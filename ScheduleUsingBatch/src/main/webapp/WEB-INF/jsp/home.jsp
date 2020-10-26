@@ -12,6 +12,8 @@
 <h2> AUTO SCHEDULING </h2><br>
 <a href="auto">Click Here</a><br>
 
+
+
 <h2> MANUAL SCHEDULING </h2><br>
 <a href="manual">Click Here</a>
 
@@ -19,12 +21,14 @@
 <c:if test="${checkManual eq 'manual'}">
 <form action="/manualmode" method="get">
 <table>
-<c:forEach items="${file}" var="fileName">
+<c:forEach items="${file}" var="fileName" >
 <tr> <td><input type="checkbox" name="csvfile" value= "${fileName}"></td><td>
    ${fileName}</td>
 </tr>
 </c:forEach>
   </table>
+  
+Scheduling Time:  <input type="datetime-local"  value="2020-10-26 22:00:00" step="1" name="ScheTime">
 <input type="submit" value="Submit">
 </form>
 </c:if>
